@@ -11,11 +11,19 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
-<body class="bg-white text-gray-600 ">
-  <!-- navbar  -->
-  <header class="flex justify-between items-center px-4 py-2 ">
-    <div><i class="fa-solid fa-bars"></i></div>
-    <button><i class="fa-solid fa-magnifying-glass"></i></button>
+<body class="bg-white text-gray-800">
+
+  <!-- navbar -->
+  <header class="flex justify-between items-center px-4 py-2">
+
+    <button aria-label="Open menu">
+      <i class="fa-solid fa-bars" aria-hidden="true"></i>
+    </button>
+
+    <button aria-label="Search">
+      <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+    </button>
+
   </header>
 
   <!-- stories et titre -->
@@ -95,10 +103,10 @@
     <!-- Slider -->
     <div class="flex gap-2 overflow-x-auto py-2">
       <button class="flex-shrink-0 w-20 h-9 bg-green-400 text-black rounded ">All</button>
-      <button class="flex-shrink-0 w-20 h-9 bg-blue-400 text-white p-1 rounded">Half-day </button>
-      <button class="flex-shrink-0 w-20 h-9 bg-pink-500 text-white p-1 rounded">Full-day</button>
-      <button class="flex-shrink-0 w-20 h-9 bg-green-400 text-white p-1 rounded">Adventure</button>
-      <button class="flex-shrink-0 w-20 h-9 bg-purple-400 text-white p-1 rounded"> Highlights</button>
+      <button class="flex-shrink-0 w-20 h-9 bg-blue-600 text-white p-1 rounded">Half-day </button>
+      <button class="flex-shrink-0 w-20 h-9 bg-blue-600 text-white p-1 rounded">Full-day</button>
+      <button class="flex-shrink-0 w-20 h-9 bg-blue-600 text-white p-1 rounded">Adventure</button>
+      <button class="flex-shrink-0 w-20 h-9 bg-blue-600 text-white p-1 rounded"> Highlights</button>
     </div>
   </section>
 
@@ -124,7 +132,7 @@
 
   <section class="p-4">
     <article class=" shadow-md rounded-2xl overflow-hidden ">
-          <img src="images/viator2.jpg" alt="" class="w-full object-cover h-56 ">
+          <img src="images/viator2.jpg" alt="Yellow river article" class="w-full object-cover h-56 ">
           
           <div class="flex items-center gap-4 bg-gris ">
             <div class="p-2">
@@ -185,17 +193,38 @@
 
 
   <nav>
+  <section class="fixed left-0 right-0 bottom-0 px-2">
+    <div class="flex items-center justify-around p-3 h-full w-full bg-gray-300 rounded-xl border-solid">
 
-  <section class="fixed left-0 right-0 bottom-0 px-2 ">
-    <div class=" flex  items-center justify-around  p-3 h-full w-full bg-gray-300 rounded-xl border-solid">
-      <button class="bg-green-400 rounded-xl h-9 w-11 flex justify-center items-center"><i class="fa-solid fa-house"></i></button>
-      <button class="hover:bg-green-400 rounded-xl h-9 w-11 flex justify-center items-center"><i class="fas fa-map-marker-alt"></i></button>
-      <button class="hover:bg-green-400 rounded-xl h-9 w-11 flex justify-center items-center"><i class="fa-regular fa-heart"></i></button>
-      <a href="http://127.0.0.1:5500/profil.html"><button class="hover:bg-green-400 rounded-xl h-9 w-11 flex justify-center items-center"><i class="fa-solid fa-user"></i></button></a>
+      <button
+        aria-label="Accueil"
+        class="bg-green-400 rounded-xl h-9 w-11 flex justify-center items-center">
+        <i class="fa-solid fa-house"></i>
+      </button>
+
+      <button
+        aria-label="Carte"
+        class="hover:bg-green-400 rounded-xl h-9 w-11 flex justify-center items-center">
+        <i class="fas fa-map-marker-alt"></i>
+      </button>
+
+      <button
+        aria-label="Favoris"
+        class="hover:bg-green-400 rounded-xl h-9 w-11 flex justify-center items-center">
+        <i class="fa-regular fa-heart"></i>
+      </button>
+
+      <a href="http://127.0.0.1:5500/profil.html" aria-label="Profil">
+        <button
+          aria-label="Profil"
+          class="hover:bg-green-400 rounded-xl h-9 w-11 flex justify-center items-center">
+          <i class="fa-solid fa-user"></i>
+        </button>
+      </a>
+
     </div>
-
   </section>
-  </nav>
+</nav>
 
 
   
