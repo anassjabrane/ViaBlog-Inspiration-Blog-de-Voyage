@@ -12,7 +12,8 @@
 <body class="bg-gray-100 font-sans">
 
   <!-- Header -->
-  <header class="bg-white shadow-md p-4 flex justify-between items-center">
+ <header class="bg-white shadow-md p-4 flex justify-between items-center
+               md:ml-20">
     <h1 class="text-xl font-bold text-gray-800">Explore Beyond the Limits</h1>
     <button class="text-gray-600">
       <i class="fa-solid fa-bars"></i>
@@ -73,11 +74,14 @@
   </section>
 
   <!-- Bottom Navigation -->
-  <nav>
-
-  <div class="fixed left-0 right-0 bottom-0 px-2 ">
-    <div class=" flex  items-center justify-around  p-3 h-full w-full bg-gray-300 rounded-xl border-solid">
-      <button class=" hover:bg-green-400 rounded-xl h-9 w-11 flex justify-center items-center"><i class="fa-solid fa-house"></i></button>
+  <nav class="fixed bottom-0 left-0 right-0 md:top-0 md:bottom-0 md:w-20 md:h-screen">
+    <div class="flex md:flex-col items-center justify-around md:justify-start gap-4
+             p-3 bg-gray-300 rounded-xl md:rounded-none h-full">
+      <a href="home.html"
+      aria-label="Profil"
+      class="hover:bg-green-400 rounded-xl h-9 w-11 flex justify-center items-center">
+      <i class="fa-solid fa-house"></i>
+   </a>
       <button class="hover:bg-green-400 rounded-xl h-9 w-11 flex justify-center items-center"><i class="fas fa-map-marker-alt"></i></button>
       <button class="hover:bg-green-400 rounded-xl h-9 w-11 flex justify-center items-center"><i class="fa-regular fa-heart"></i></button>
       <button class="bg-green-400 rounded-xl h-9 w-11 flex justify-center items-center"><i class="fa-solid fa-user"></i></button>
