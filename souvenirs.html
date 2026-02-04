@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mes Souvenirs</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+  <!-- HEADER -->
+  <header class="flex justify-between items-center p-4 bg-white shadow">
+    <h1 class="text-2xl font-bold">Mes Souvenirs</h1>
+    <button id="openMemoryForm" class="bg-blue-500 text-white px-4 py-2 rounded">+ Souvenir</button>
+  </header>
+
+  <!-- FORMULAIRE SOUVENIR -->
+  <section id="memoryForm" class="fixed inset-0 bg-black/50 flex items-center justify-center hidden">
+    <div class="bg-white p-6 rounded-xl w-96 space-y-3">
+      <h2 class="font-bold text-lg">Ajouter un Souvenir</h2>
+      <input id="memoryTitle" type="text" placeholder="Titre" class="w-full border p-2 rounded">
+      <input id="memoryDestination" type="text" placeholder="Destination" class="w-full border p-2 rounded">
+      <input id="memoryDate" type="date" class="w-full border p-2 rounded">
+      <input id="memoryRating" type="number" placeholder="Note (1-5)" min="1" max="5" class="w-full border p-2 rounded">
+      <input id="memoryImage" type="url" placeholder="URL de l'image" class="w-full border p-2 rounded">
+      <input id="memoryCategory" type="text" placeholder="Catégorie" class="w-full border p-2 rounded">
+      <div class="flex justify-end gap-2">
+        <button id="closeMemoryForm" class="px-3 py-1 border rounded">Annuler</button>
+        <button id="addMemory" class="px-3 py-1 bg-blue-500 text-white rounded">Ajouter</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- LISTE DES SOUVENIRS -->
+  <section class="p-4">
+    <div id="memoriesContainer" class="grid md:grid-cols-3 gap-4">
+      <!-- Les souvenirs s'afficheront ici -->
+    </div>
+  </section>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const openMemoryFormBtn = document.getElementById("openMemoryForm");
+      const memoryForm = document.getElementById("memoryForm");
+      const closeMemoryForm = document.getElementById("closeMemoryForm");
+      const addMemoryBtn = document.getElementById("addMemory");
+
+      const titleInput = document.getElementById("memoryTitle");
+      const destinationInput = document.getElementById("memoryDestination");
+      const dateInput = document.getElementById("memoryDate");
+      const ratingInput = document.getElementById("memoryRating");
+      const imageInput = document.getElementById("memoryImage");
+      const categoryInput = document.getElementById("memoryCategory");
+
+      const memoriesContainer = document.getElementById("memoriesContainer");
+      let memories = [];
+
+      function renderMemories() {
+        memoriesContainer.innerHTML = "";
+        memories.forEach(mem => {
+          const div = document.createElement("div");
+          div.className = "bg-white shadow-md rounded-xl overflow-hidden";
+          div.innerHTML = `
+            <img src="${mem.image}" class="w-full h-40 object-cover">
+            <div class="p-4">
+              <h3 class="font-bold text-lg">${mem.title}</h3>
+              <p>Destination: ${mem.destination}</p>
+              <p>Date: ${mem.date}</p>
+              <p>Note: ${mem.rating}/5</p>
+              <p>Catégorie: ${mem.category}</p>
+            </div>
+          `;
+          memoriesContainer.appendChild(div);
+        });
+      }
+
+      openMemoryFormBtn.onclick = () => memoryForm.classList.remove("hidden");
+      closeMemoryForm.onclick = () => memoryForm.classList.add("hidden");
+
+      addMemoryBtn.onclick = () => {
+        const memory = {
+          title: titleInput.value,
+          destination: destinationInput.value,
+          date: dateInput.value,
+          rating: ratingInput.value,
+          image: imageInput.value,
+          category: categoryInput.value
+        };
+
+        // Vérifier tous les champs
+        if (!memory.title || !memory.destination || !memory.date || !memory.rating || !memory.image || !memory.category) {
+          return alert("Remplissez tous les champs !");
+        }
+
+        memories.unshift(memory); // Ajouter au début
+        renderMemories();
+
+        // Reset formulaire
+        memoryForm.classList.add("hidden");
+        titleInput.value = "";
+        destinationInput.value = "";
+        dateInput.value = "";
+        ratingInput.value = "";
+        imageInput.value = "";
+        categoryInput.value = "";
+      };
+    });
+  </script>
+
+</body>
+</html>

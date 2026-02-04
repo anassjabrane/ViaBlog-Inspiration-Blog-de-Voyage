@@ -12,6 +12,8 @@
 </head>
 
 <body class="bg-white text-gray-800 pb-20 md:pl-24 md:pb-0">
+  
+
 
   <!-- HEAD -->
   <header class="flex justify-between items-center px-4 py-2">
@@ -117,10 +119,45 @@
     </div>
   </section>
 
+
   <section class="p-4">
+    <!-- ajouter btn add-->
+<section class="px-4 py-2">
+  <button id="openMemoryForm"
+    class="w-full bg-green-400 text-black py-2 rounded-xl font-semibold">
+    + Ajouter un souvenir
+  </button>
+</section>
+
+
+  <!-- FORMULAIRE SOUVENIR -->
+  <section id="memoryForm" class="fixed inset-0 bg-black/50 flex items-center justify-center hidden">
+    <div class="bg-white p-6 rounded-xl w-96 space-y-3">
+      <h2 class="font-bold text-lg">Ajouter un Souvenir</h2>
+      <input id="memoryTitle" type="text" placeholder="Titre" class="w-full border p-2 rounded">
+      <input id="memoryDestination" type="text" placeholder="Destination" class="w-full border p-2 rounded">
+      <input id="memoryDate" type="date" class="w-full border p-2 rounded">
+      <input id="memoryRating" type="number" placeholder="Note (1-5)" min="1" max="5" class="w-full border p-2 rounded">
+      <input id="memoryImage" type="url" placeholder="URL de l'image" class="w-full border p-2 rounded">
+      <input id="memoryCategory" type="text" placeholder="Catégorie" class="w-full border p-2 rounded">
+      <div class="flex justify-end gap-2">
+        <button id="closeMemoryForm" class="px-3 py-1 border rounded">Annuler</button>
+        <button id="addMemory" class="px-3 py-1 bg-blue-500 text-white rounded">Ajouter</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="p-4">
+    <div id="memoriesContainer" class="grid md:grid-cols-3 gap-4">
+      <!-- Les souvenirs s'afficheront ici -->
+    </div>
+  </section>
+
+    
     <h3 class="sr-only">Article</h3>
     <article class=" shadow-md rounded-2xl overflow-hidden  ">
       <a href="description.html"><img src="images/louvermuseum.jpg" alt="" class="w-full object-cover h-56  "></a>
+      
 
       <div class="flex items-center gap-4 bg-gris ">
         <div class="p-2">
@@ -136,6 +173,10 @@
         </div>
       </div>
     </article>
+    
+
+
+
   </section>
 
   <section class="p-4">
